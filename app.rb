@@ -7,9 +7,7 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    bookmark1 = Bookmarks.new
-    @bookmarks = bookmark1.show
-    # "Random Bookmark My Favorite"
+    @bookmarks = Bookmarks.show
     erb :bookmarks
   end
 

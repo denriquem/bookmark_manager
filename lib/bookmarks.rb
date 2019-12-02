@@ -1,11 +1,11 @@
 class Bookmarks
 
-  def initialize
-    @list = ["Random", "Bookmark", "My Favorite"]
-  end
+  # def initialize
+  #   @list = ["Random", "Bookmark", "My Favorite"]
+  # end
 
-  def show
-    @list
+  def self.show
+    ["Random", "Bookmark", "My Favorite"]
   end
 
 end
