@@ -17,3 +17,10 @@ Setting up the SQL database
 > \c bookmark_manager
 > CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
 ```
+
+Setting up the test SQL database
+```
+> createdb bookmark_manager_test
+> psql bookmark_manager_test
+> CREATE TABLE bookmarks(id SERIAL PRIMARY KEY, url VARCHAR(60));
+```
