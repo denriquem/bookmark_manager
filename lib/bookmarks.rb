@@ -1,11 +1,12 @@
+require 'pg'
+
 class Bookmarks
 
-  # def initialize
-  #   @list = ["Random", "Bookmark", "My Favorite"]
-  # end
-
   def self.show
-    ["Random", "Bookmark", "My Favorite"]
+    con = PG.connect dbname: 'bookmark_manager' , user: ENV['USER']
+    rows = con.exec "SELECT url FROM bookmarks"
+    rows.map(&:values).flatten
+  ensure
+    con.close if con
   end
-
 end
