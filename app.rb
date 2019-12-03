@@ -3,12 +3,21 @@ require './lib/bookmarks'
 
 class BookmarkManager < Sinatra::Base
   get '/' do
-    "Hello Sinatra"
+    erb :index, layout: :layout
   end
 
   get '/bookmarks' do
     @bookmarks = Bookmarks.show
-    erb :bookmarks
+    erb :bookmarks, layout: :layout
+  end
+
+  get '/add_form' do
+    erb :add_form, layout: :layout
+  end
+
+  post '/add' do
+    Bookmarks.add params['URL']
+    redirect '/bookmarks'
   end
 
   run! if app_file == $0

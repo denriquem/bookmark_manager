@@ -20,4 +20,11 @@ describe Bookmarks do
 
   end
 
+  describe '.add' do
+    it 'should add a bookmark' do
+      Bookmarks.add('https//:foobar.com')
+      expect(Bookmarks.show).to include('https//:foobar.com')
+    end
+  end
+
 end
