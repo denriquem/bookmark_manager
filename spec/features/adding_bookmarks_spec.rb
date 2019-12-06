@@ -1,6 +1,6 @@
 feature 'adding_bookmarks' do
   scenario 'it adds bookmarks' do
-    visit '/'
+    visit '/add_form'
     # click_button 'Add Bookmark'
     fill_in 'URL', with: 'Another Bookmark'
     fill_in 'Title', with: 'Test Bookmark'

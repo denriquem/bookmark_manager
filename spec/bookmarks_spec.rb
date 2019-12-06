@@ -17,7 +17,7 @@ describe Bookmarks do
       Bookmarks.add(url: "http://www.destroyallsoftware.com", title: "Destroy All Software")
       Bookmarks.add(url: "http://www.google.com", title: "Google")
 
-      p bookmarks = Bookmarks.show
+      bookmarks = Bookmarks.show
 
       expect(bookmarks.length).to eq 3
       expect(bookmarks.first).to be_a Bookmarks
