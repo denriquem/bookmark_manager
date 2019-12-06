@@ -1,5 +1,6 @@
 require './app'
 ENV["RACK_ENV"] = 'test'
+ENV["ENVIRONMENT"] = 'test'
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'

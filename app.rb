@@ -15,6 +15,11 @@ class BookmarkManager < Sinatra::Base
     erb :add_form, layout: :layout
   end
 
+  post '/add_form' do
+    Bookmark.add(url: params[:url], title: params[:title])
+    redirect '/bookmarks'
+  end
+
   post '/add' do
     Bookmarks.add params['URL']
     redirect '/bookmarks'
