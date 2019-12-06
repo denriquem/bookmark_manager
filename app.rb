@@ -3,16 +3,16 @@ require './lib/bookmarks'
 
 class BookmarkManager < Sinatra::Base
   get '/' do
-    erb :index, layout: :layout
+    erb :index
   end
 
   get '/bookmarks' do
     @bookmarks = Bookmarks.show
-    erb :bookmarks, layout: :layout
+    erb :bookmarks
   end
 
   get '/add_form' do
-    erb :add_form, layout: :layout
+    erb :add_form
   end
 
   post '/add_form' do

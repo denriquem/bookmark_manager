@@ -2,18 +2,18 @@ require 'bookmarks'
 require 'pg'
 
 describe Bookmarks do
-  before :each do
-    add_row "url1"
-    add_row "url2"
-    add_row "url3"
-  end
+  # before :each do
+  #   add_row "url1"
+  #   add_row "url2"
+  #   add_row "url3"
+  # end
 
   describe ".show" do
     it "shows the list of bookmarks" do
       connection = PG.connect(dbname: 'bookmark_manager_test')
 
       #Add the test data
-      bookmark = Bookmarks.add(url: "http://www.makersacademy.com", title: "Makers Academy")
+      bookmark_first = Bookmarks.add(url: "http://www.makersacademy.com", title: "Makers Academy")
       Bookmarks.add(url: "http://www.destroyallsoftware.com", title: "Destroy All Software")
       Bookmarks.add(url: "http://www.google.com", title: "Google")
 
@@ -21,7 +21,7 @@ describe Bookmarks do
 
       expect(bookmarks.length).to eq 3
       expect(bookmarks.first).to be_a Bookmarks
-      expect(bookmarks.first.id).to eq bookmark.id
+      expect(bookmarks.first.id).to eq bookmark_first.id
       expect(bookmarks.first.title).to eq 'Makers Academy'
       expect(bookmarks.first.url).to eq 'http://www.makersacademy.com'
     end
